@@ -21,6 +21,7 @@ export default function useLoom(connectionInfo) {
   const [loomObj, setLoomObj] = React.useState(null);
 
   if (!connectionInfo) {
+    console.warn('no connection information passed in, using default:', DEFAULT_LOCAL_DEV);
     connectionInfo = DEFAULT_LOCAL_DEV;
   }
 

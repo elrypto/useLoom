@@ -3,7 +3,7 @@ import loomLogo from './loomLogo.png';
 import './App.css';
 import useLoom from './useLoom/useLoom';
 import useLoomWithConfig from './useLoom/useLoomWithConfig';
-import SimpleStore from './contracts/SimpleStore';
+//import SimpleStore from './contracts/SimpleStore';
 import { createContractInstance } from './useLoom/loomActions';
 
 function App() {
@@ -37,9 +37,9 @@ function App() {
           className="loomButton"
           onClick={ async()=> {
             console.log('testing contract invocation');
-            let c = await createContractInstance(loomObj, SimpleStore);
+            /*let c = await createContractInstance(loomObj, SimpleStore);
             console.log("testcontract", c);
-            await c.methods.set(90001).send({from: loomObj.currentUserAddress})
+            await c.methods.set(90001).send({from: loomObj.currentUserAddress})*/
           }}
         >
           Call Set on Contract (testing contract instance and invocation)
@@ -50,10 +50,10 @@ function App() {
           className="loomButton"
           onClick={ async()=> {
             console.log('testing contract invocation');
-            let c2 = await createContractInstance(loomObj, SimpleStore);
+            /*let c2 = await createContractInstance(loomObj, SimpleStore);
             console.log("testcontract", c2);
             let val =  await c2.methods.get().call();
-            alert('contract returned' + JSON.stringify(val));
+            alert('contract returned' + JSON.stringify(val));*/
           }}
         >
           Call Get on Contract (testing contract instance and invocation)
