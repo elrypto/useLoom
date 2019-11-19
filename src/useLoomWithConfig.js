@@ -1,5 +1,4 @@
 import useLoom from "./useLoom";
-import { ILoomConnectionInfo } from "../../common/Interfaces";
 import {
   LOOM_NETWORK,
   LOOM_DEV_NETWORK_ID,
@@ -8,11 +7,17 @@ import {
   LOOM_EXTDEV_NETWORK_ID,
   LOOM_EXTDEV_READ_URL,
   LOOM_EXTDEV_WRITE_URL
-} from "./../../config";
+} from "./config";
 
+
+const connectionInfo = {
+  networkAlias: '',
+  networkId: '',
+  writeUrl: '',
+  readUrl: ''
+}
 
 export default function useLoomWithConfig() {
-  let connectionInfo: ILoomConnectionInfo|any = {};
 
   if (LOOM_NETWORK==="DEV"){
     //console.log("DEV");
@@ -30,6 +35,5 @@ export default function useLoomWithConfig() {
     console.error("Invalid LOOM_NETWORK entry in .env config file");
   }
   
-  //console.log("using loom with configuaration:", connectionInfo);
-  return useLoom(null, connectionInfo);
+  return useLoom(connectionInfo);
 }

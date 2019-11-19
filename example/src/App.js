@@ -7,8 +7,8 @@ import SimpleStore from './contracts/SimpleStore';
 import { createContractInstance } from './useLoom/loomActions';
 
 function App() {
-  //const loomObj = useLoom();
-  const loomObj = useLoomWithConfig();
+  const loomObj = useLoom();
+  //const loomObj = useLoomWithConfig();
 
   return (
 
